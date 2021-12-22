@@ -1,0 +1,43 @@
+---
+version: '3'
+services:
+  rootconfig:
+    image: jbeginsamuel/mf-rootconfig-app:latest
+    container_name: rootconfig
+    ports:
+      - "80:80"
+  dashboard:
+    image: jbeginsamuel/mf-dashboard-app:latest
+    container_name: dashboard
+    ports:
+      - "8080:8001"
+    depends_on:
+      - rootconfig
+  login:
+    image: jbeginsamuel/mf-login-app:latest
+    container_name: login
+    ports:
+      - "8080:8002"
+    depends_on:
+      - rootconfig
+  navbar:
+    image: jbeginsamuel/mf-navbar-app:latest
+    container_name: navbar
+    ports:
+      - "8080:8003"
+    depends_on:
+      - rootconfig
+  styleguide:
+    image: jbeginsamuel/mf-styleguide-app:latest
+    container_name: styleguid
+    ports:
+      - "8080:8004"
+    depends_on:
+      - rootconfig
+  transactions:
+    image: jbeginsamuel/mf-transactions-app:latest
+    container_name: transactions
+    ports:
+      - "8080:8005"
+    depends_on:
+      - rootconfig
