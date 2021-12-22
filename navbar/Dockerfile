@@ -1,7 +1,6 @@
-FROM node:17 as build-deps as build-deps
+FROM node:17 as build-deps
 WORKDIR /usr/src/app
 COPY package.json pnpm-lock.yaml ./
-RUN npm install -g pnpm
+RUN npm install
 COPY . ./
-EXPOSE 8003
-CMD ["pnpm", "start", "--http", "--port", "8003"]
+CMD ["npm", "start"]
