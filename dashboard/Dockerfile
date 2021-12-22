@@ -1,4 +1,4 @@
-FROM node:17.3-alpine3.14 as build-deps
+FROM node:14.18-alpine3.12 as build-deps
 WORKDIR /usr/src/app
 COPY package.json pnpm-lock.yaml ./
 RUN npm install
