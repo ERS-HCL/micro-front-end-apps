@@ -4,13 +4,5 @@ COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm
 COPY . ./
 EXPOSE 8001
-pnpm start --https --port 8001
-
-#RUN yarn
-#COPY . ./
-#RUN yarn build
-#FROM nginx:1.12-alpine
-#COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
-#EXPOSE 80
-#CMD ["nginx", "-g", "daemon off;"]
-# Need to test this pnpm 
+#RUN pnpm start --http --port 8001
+CMD ["pnpm", "start", "--http", "--port", "8001"]
