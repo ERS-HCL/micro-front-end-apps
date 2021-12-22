@@ -5,7 +5,7 @@ services:
     image: jbeginsamuel/mf-rootconfig-app:latest
     container_name: rootconfig
     ports:
-      - "80:80"
+      - "9001:80"
   dashboard:
     image: jbeginsamuel/mf-dashboard-app:latest
     container_name: dashboard

@@ -1,11 +1,8 @@
 FROM node:14.18-alpine3.12 as build-deps
 WORKDIR /usr/src/app
 COPY package.json  ./
-RUN yarn
+RUN npm install
 COPY . ./
-RUN yarn build
-
-FROM nginx:1.12-alpine
-COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+#EXPOSE 8001
+#RUN pnpm start --http --port 8001
+CMD ["npm", "start"]
