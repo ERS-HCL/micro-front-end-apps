@@ -1,6 +1,6 @@
-FROM node:8.16 as build-deps
+FROM node:17 as build-deps
 WORKDIR /usr/src/app
-COPY package.json pnpm-lock.yaml ./
+COPY package.json  ./
 RUN npm install -g pnpm
 COPY . ./
 EXPOSE 8002
