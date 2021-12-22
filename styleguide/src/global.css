@@ -1,0 +1,51 @@
+:root {
+  --color-primary: #f79000;
+  --color-secondary: #8b8c8a;
+  --color-danger: #e71d36;
+  --color-warning: #ff9f1c;
+  --color-info: #2ec4b6;
+  --color-background: #e2e2e2;
+  --color-white: #000;
+  --color-black: #171817;
+  --color-overlay: rgba(3, 3, 3, 0.8);
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-white);
+}
+
+nav.topnav {
+  position: fixed;
+  width: 100vw;
+  top: 0px;
+  z-index: 100;
+}
+
+#transactions {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#transactions td, #transactions th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+#transactions tr:nth-child(even){background-color: #f2f2f2;}
+
+#transactions tr:hover {background-color: #ddd;}
+
+#transactions th {
+ 
+  text-align: left;
+  background-color: #000;
+  color: white;
+  font-weight: 400;
+}
