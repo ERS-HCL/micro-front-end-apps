@@ -34,7 +34,7 @@ services:
     image: jbeginsamuel/mf-rootconfig-app:latest
     container_name: rootconfig
     ports:
-      - "8000:8000"
+      - "8000:9000"
   dashboard:
     image: jbeginsamuel/mf-dashboard-app:latest
     container_name: dashboard
